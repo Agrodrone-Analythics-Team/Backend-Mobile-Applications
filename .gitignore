@@ -1,0 +1,6 @@
+# Ignorar datasets y runs
+datasets/
+runs/
+.idea/
+__pycache__/
+*.pt
