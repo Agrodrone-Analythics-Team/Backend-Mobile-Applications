@@ -1,7 +1,7 @@
-# ACME Learning Center Platform
+# Agro Drone Analytics Platform
 
 ## Summary
-ACME Learning Center Platform, illustrating development with Java, Spring Boot Framework, and Spring Data JPA on MySQL Database. It also illustrates open-api documentation configuration and integration with Swagger UI.
+Agro Drone Analytics Platform, illustrating development with Java, Spring Boot Framework, and Spring Data JPA on MySQL Database. It also illustrates open-api documentation configuration and integration with Swagger UI.
 
 ## Features
 - RESTful API
@@ -14,7 +14,7 @@ ACME Learning Center Platform, illustrating development with Java, Spring Boot F
 - Domain-Driven Design
 
 ## Bounded Contexts
-This version of ACME Learning Center Platform is divided into three bounded contexts: Profiles, Learning, and Identity and Access Management (IAM).
+This version is divided into three bounded contexts: Detection, Profiles, flight, and Identity and Access Management (IAM).
 
 ### Profiles Context
 
@@ -28,30 +28,6 @@ This context includes also an anti-corruption layer to communicate with the Lear
 - Create a new Profile, returning ID of the created Profile on success.
 - Get a Profile by Email, returning the associated Profile ID on success.
 
-### Learning Context
-
-The Learning Context is responsible for managing the courses, course learning paths and course enrollments. Its features include:
-
-- Create a Course.
-- Get a Course by id.
-- Update a Course information.
-- Delete a Course.
-- Get all Courses.
-- Add an existing Tutorial to Course Learning Path.
-- Register a new Student with implicit profile creation.
-- Submit a Student Enrollment Request in a Course.
-- Cancel a Student Enrollment Request in a Course.
-- Confirm a Student Enrollment Request in a Course.
-- Reject a Student Enrollment Request in a Course.
-- Get all Enrollments for a Course.
-
-This context includes also an anti-corruption layer to communicate with the Profiles Context. The anti-corruption layer is responsible for managing the communication between the Learning Context and the Profiles Context. It consumes the capabilities offered by the Profiles Context to:
-
-- Create the Profile of a new Student.
-- Get the Profile ID of a Student by Email.
-
-Tutorial is a concept that represents a learning resource. It is used to build the learning path of a course. The Tutorial aggregate and its publishing lifecycle are part of the Publishing bounded context, which is beyond the scope of this platform version.
-
 ### Identity and Access Management (IAM) Context
 
 The IAM Context is responsible for managing platform users, including the sign in and sign up processes. It applies JSON Web Token based authorization and Password hashing. It also adds a request authorization middleware to Spring Boot Pipeline, in order to validate included token in request header on endpoints that require authorization. Its capabilities include:
@@ -63,8 +39,6 @@ The IAM Context is responsible for managing platform users, including the sign i
 - Use Spring Security features to implement an authorization pipeline based on request filtering.
 - Generate and validate JSON Web Tokens.
 - Apply Password hashing.
-
-This version implements the following roles: Admin, Instructor, and User. The roles are used to manage the access to the platform features. The Admin role has access to all features, the Instructor and User roles should have access according to business rules.
 
 This context includes also an anti-corruption layer. The anti-corruption layer is responsible for managing the communication between the IAM Context and other bounded Contexts. Its capabilities include:
 
@@ -100,4 +74,3 @@ The following guides illustrate how to use some features concretely:
 * [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
 * [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
 * [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
-

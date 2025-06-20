@@ -1,0 +1,4 @@
+package com.acme.center.platform.flight.domain.model.queries;
+
+public record GetDroneByIdQuery(Long droneId) {
+}
