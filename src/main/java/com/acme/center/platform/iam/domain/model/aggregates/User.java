@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
-@Table(name = "users")
+@Table(name = "\"users\"") // <-- nota las comillas dobles
 public class User extends AuditableAbstractAggregateRoot<User> {
 
     @Getter
