@@ -1,0 +1,24 @@
+# requirements.txt
+
+# Librerías para FastAPI y Servidor
+fastapi
+uvicorn
+
+# Librerías para Base de Datos y Usuarios
+sqlalchemy
+pydantic
+passlib[bcrypt]
+python-jose[cryptography]
+PyMySQL
+
+# Librerías para Detección de Objetos (YOLO)
+ultralytics
+numpy
+Pillow
+python-multipart
+#Instalar los requesitos de ejecucion
+#pip install -r requirements.txt
+#Ejeuctar el backend
+#uvicorn main:app --reload
+
+#pip install PyMySQL
